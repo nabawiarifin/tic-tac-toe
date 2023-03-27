@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+header{
+    width: 100vw;
+    flex: 0 1 100px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container{
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    border-color: black;
+    border-style: solid;
+}
+
+footer{
+    flex: 0 1 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
