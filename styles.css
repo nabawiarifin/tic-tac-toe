@@ -5,6 +5,11 @@ body{
     margin: 0;
 }
 
+:root{
+    --box-size:150px;
+    --shape-size: calc(var(--box-size) * 0.9)
+}
+
 header{
     width: 100vw;
     flex: 0 1 100px;
@@ -21,12 +26,83 @@ header{
     align-items: center;
 }
 
-.game-container{
+.board{
     display: grid;
-    grid-template-columns: repeat(3, 150px);
-    grid-template-rows: repeat(3, 150px);
-    border-color: black;
-    border-style: solid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    justify-content: center;
+    align-items: center;
+}
+
+.board.x .box:not(.x):not(.o):hover::before,
+.board.x .box:not(.x):not(.o):hover::after,
+.board.o .box:not(.x):not(.o):hover::before{
+    background-color: lightgrey;
+}
+
+
+.box{
+    height: var(--box-size);
+    width: var(--box-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.box.x,
+.box.o{
+    cursor: not-allowed;
+}
+
+.box.x::before,
+.box.x::after,
+.box.o::before{
+    background-color: black;
+}
+
+.box.x::before,
+.box.x::after,
+.board.x .box:not(.x):not(.o):hover::before,
+.board.x .box:not(.x):not(.o):hover::after{
+    content: '';
+    position: absolute;
+    width: calc(var(--shape-size) * 0.15);
+    height: var(--shape-size);
+}
+
+.box.x::before,
+.board.x .box:hover::before{
+    transform: rotate(45deg);
+}
+
+.box.x::after,
+.board.x .box:hover::after{
+    transform: rotate(-45deg);
+}
+
+.box.o::before,
+.box.o::after,
+.board.o .box:not(.x):not(.o):hover::before,
+.board.o .box:not(.x):not(.o):hover::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.box.o::before,
+.board.o .box:hover::before{
+    width: var(--shape-size);
+    height: var(--shape-size);
+}
+
+.box.o::after,
+.board.o .box:hover::after{
+    width: calc(var(--shape-size) * 0.7);
+    height: calc(var(--shape-size) * 0.7);
+    background-color: white;
 }
 
 footer{
