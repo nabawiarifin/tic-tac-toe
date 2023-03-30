@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <header>Tic-Tac-Toe</header>
 
     <div class="container">
-        <div class="board o">
-            <div class="box x" data-box></div>
-            <div class="box o" data-box></div>
+        <div class="board" id="board">
+            <div class="box" data-box></div>
+            <div class="box" data-box></div>
             <div class="box" data-box></div>
             <div class="box" data-box></div>
             <div class="box" data-box></div>
@@ -22,6 +23,11 @@
             <div class="box" data-box></div>
             <div class="box" data-box></div>
         </div>
+    </div>
+
+    <div class="win-popup" id="winPopup">
+        <div data-win-popup></div>
+        <button id="restartBtn">Restart</button>
     </div>
 
     <footer>Copyright © Nabawi Arifin 2023</footer>

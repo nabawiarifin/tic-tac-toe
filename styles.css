@@ -105,6 +105,38 @@ header{
     background-color: white;
 }
 
+.win-popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 5rem;
+}
+
+.win-popup.show{
+    display: flex;
+}
+.win-popup button{
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .25em .5em;
+    cursor: pointer;
+}
+
+.win-popup button:hover{
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
 footer{
     flex: 0 1 30px;
     display: flex;
